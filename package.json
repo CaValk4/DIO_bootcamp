@@ -1,0 +1,15 @@
+{
+  "name": "dio_bootcamp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "styled-components": "^6.1.13",
+    "yarn": "^1.22.22"
+  }
+}
