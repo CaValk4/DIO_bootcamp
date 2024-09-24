@@ -8,9 +8,15 @@ import { useState } from "react";
 const App = () => {
   const [currentNumber, setCurrentNumber] = useState('')
 
+  const [firstNumber, setFirstNumber] = useState();
+
+  const handleOnCLear = () => {
+    setCurrentNumber('0')
+  }
+
   const handleAddNumber = (num) => {
     
-    setCurrentNumber(prev => `${num}${prev}`)
+    setCurrentNumber(prev => `${num}${prev === '0' ? '' : prev}`)
   } 
   return (
     <Container>
@@ -39,6 +45,9 @@ const App = () => {
       <Button label='0' onClick={() => handleAddNumber('0')}/>
       <Button label='/' onClick={() => handleAddNumber('/')}/>
       <Button label='x' onClick={() => handleAddNumber('*')}/>
+      </Row>
+      <Row>
+      <Button label='Clear' onClick={handleOnCLear}/>
       </Row>
     </Content>
     </Container>

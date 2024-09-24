@@ -15,6 +15,7 @@ export const Content = styled.div`
     width: 60%;
     padding: 20px;
     border-radius: 5px;
+    
 `
 
 export const Row = styled.div`
