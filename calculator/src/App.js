@@ -8,16 +8,30 @@ import { useState } from "react";
 const App = () => {
   const [currentNumber, setCurrentNumber] = useState('')
 
-  const [firstNumber, setFirstNumber] = useState();
+  const [firstNumber, setFirstNumber] = useState('0');
 
   const handleOnCLear = () => {
     setCurrentNumber('0')
   }
 
   const handleAddNumber = (num) => {
-    
     setCurrentNumber(prev => `${num}${prev === '0' ? '' : prev}`)
   } 
+
+  const handleSumNumbers = () => {
+    if(firstNumber === '0'){
+      setFirstNumber(String(currentNumber));
+      handleOnCLear();
+    }else{
+      console.log(Number(currentNumber), Number(firstNumber))
+      const sum = Number(firstNumber) + Number(currentNumber)
+      setCurrentNumber(sum.toString());
+    }
+  }
+
+  //to resolve:
+//  - input showing numbers backwards
+//  - the HandleSumNumbers function
   return (
     <Container>
     <Content>
@@ -32,7 +46,7 @@ const App = () => {
       <Button label='4' onClick={() => handleAddNumber('4')}/>
       <Button label='5' onClick={() => handleAddNumber('5')}/>
       <Button label='6' onClick={() => handleAddNumber('6')}/>
-      <Button label='+' onClick={() => handleAddNumber('+')}/>
+      <Button label='+' onClick={handleSumNumbers}/>
       </Row>
       <Row>
       <Button label='1' onClick={() => handleAddNumber('1')}/>
