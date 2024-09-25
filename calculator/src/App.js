@@ -128,7 +128,6 @@ const App = () => {
       </Row>
       <Row>
       <Button label='Clear' onClick={handleOnCLear}/>
-  // i dont know why, but this line brake the css.
       </Row>
     </Content>
     </Container>
